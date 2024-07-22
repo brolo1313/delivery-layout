@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AsyncPipe } from '@angular/common';
-import { Directionality } from '@angular/cdk/bidi';
+import { Directionality, Direction  } from '@angular/cdk/bidi';
 
 @Component({
   selector: 'app-core',
@@ -34,13 +34,13 @@ export class CoreComponent {
     thirdCtrl: ['', Validators.required],
   });
   isLinear = true;
-  direction: any = 'rtl';
+  direction: Direction  = 'rtl';
 
   stepperOrientation!: Observable<StepperOrientation>;
 
   constructor(private _formBuilder: FormBuilder, private dir: Directionality, breakpointObserver: BreakpointObserver,) {
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 800px)')
-      .pipe(map(({matches}) => (matches ? 'horizontal' : 'vertical')));
+      .pipe(map(({ matches }) => (matches ? 'horizontal' : 'vertical')));
   }
 }

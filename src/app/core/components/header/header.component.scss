@@ -1,5 +1,7 @@
+@import "../../../../styles/settings";
+
 .nav-wrapper{
   width: 100%;
   height: 100px;
-  background-color: lightcyan;
+  background-color: $headerColor;
 }

@@ -1,8 +1,5 @@
 <div class="stepper-container" [dir]="direction">
-  <mat-stepper
-    class="example-stepper"
-    [orientation]="(stepperOrientation | async)!"
-  >
+  <mat-stepper class="stepper" [orientation]="(stepperOrientation | async)!">
     <mat-step [stepControl]="firstFormGroup" label="Fill out your name">
       <form [formGroup]="firstFormGroup">
         <mat-form-field>
@@ -62,4 +59,3 @@
     </mat-step>
   </mat-stepper>
 </div>
-
