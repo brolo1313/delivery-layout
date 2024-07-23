@@ -16,7 +16,7 @@ export class AppComponent {
       id: 'dashboard',
       link_name: 'הקם פרויקט חדש',
       type: 'item',
-      icon: 'home',
+      iconSrc: null,
       path: '/dashboard',
       sub_menu: []
     },
@@ -25,14 +25,14 @@ export class AppComponent {
       link_name: 'לוח בקרה',
       type: 'item',
       path: null,
-      icon: 'waves',
+      iconSrc: 'assets/icons/sidebar-link-icon-5.svg',
       sub_menu: []
     },
     {
       id: 'dashboard',
       link_name: 'הקם פרויקט חדש',
       type: 'item',
-      icon: 'home',
+      iconSrc: 'assets/icons/sidebar-link-icon-4.svg',
       path: 'null',
       sub_menu: []
     },
@@ -41,14 +41,14 @@ export class AppComponent {
       link_name: 'ניהול מכולות',
       type: 'item',
       path: null,
-      icon: 'waves',
+      iconSrc: 'assets/icons/sidebar-link-icon-3.svg',
       sub_menu: []
     },
     {
       id: 'dashboard',
       link_name: 'הזמנת מכולה חדשה',
       type: 'item',
-      icon: 'home',
+      iconSrc: 'assets/icons/sidebar-link-icon-2.svg',
       path: 'null',
       sub_menu: []
     },
@@ -57,7 +57,7 @@ export class AppComponent {
       link_name: 'הגדרות משתמש',
       type: 'item',
       path: null,
-      icon: 'waves',
+      iconSrc: 'assets/icons/sidebar-link-icon-1.svg',
       sub_menu: []
     },
   ];

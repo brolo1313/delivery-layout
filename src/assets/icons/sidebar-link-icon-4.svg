@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18.701" height="18.701" viewBox="0 0 22.35 19">
+  <g id="icon" transform="translate(0.85)">
+    <g id="Rectangle_290" data-name="Rectangle 290" transform="translate(12.5)" fill="none" stroke="#fff" stroke-width="1.7">
+      <rect width="9" height="9" rx="1" stroke="none"/>
+      <rect x="0.85" y="0.85" width="7.3" height="7.3" rx="0.15" fill="none"/>
+    </g>
+    <g id="Rectangle_291" data-name="Rectangle 291" transform="translate(12.5 10)" fill="none" stroke="#fff" stroke-width="1.7">
+      <rect width="9" height="9" rx="1" stroke="none"/>
+      <rect x="0.85" y="0.85" width="7.3" height="7.3" rx="0.15" fill="none"/>
+    </g>
+    <g id="Group_665" data-name="Group 665" transform="translate(0 3.5)">
+      <line id="Line_84" data-name="Line 84" x1="10" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.7"/>
+      <line id="Line_85" data-name="Line 85" x1="7" transform="translate(3 3)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.7"/>
+    </g>
+    <g id="Group_666" data-name="Group 666" transform="translate(0 12.5)">
+      <line id="Line_84-2" data-name="Line 84" x1="10" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.7"/>
+      <line id="Line_85-2" data-name="Line 85" x1="7" transform="translate(3 3)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.7"/>
+    </g>
+  </g>
+</svg>
