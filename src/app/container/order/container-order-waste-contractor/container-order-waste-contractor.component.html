@@ -1,4 +1,4 @@
-<mat-stepper
+<!-- <mat-stepper
   class="example-stepper"
   [orientation]="(stepperOrientation | async)!">
   <mat-step [stepControl]="firstFormGroup" label="Fill out your name">
@@ -38,4 +38,35 @@
     </form>
   </mat-step>
 
-</mat-stepper>
+</mat-stepper> -->
+
+
+<div class="stepper-wrapper">
+  <mat-horizontal-stepper [linear]="false" #stepper [(selectedIndex)]="selectedIndex">
+    <mat-step *ngFor="let step of steps; let i = index" [state]="step.state" [completed]="isStepCompleted(i)">
+      <ng-template matStepLabel>
+        <div class="step-content">
+          <img [src]="step.icon" alt="step icon" class="step-icon" />
+          <div class="step-circle" [ngClass]="{
+            'active': i === selectedIndex,
+            'completed': step.completed
+
+          }">
+            <mat-icon *ngIf="step.completed">check_circle</mat-icon>
+          </div>
+
+          <div class="step-label">{{ step.label }}</div>
+          <div class="step-sub-label">{{ step.subLabel }}</div>
+        </div>
+      </ng-template>
+      <div>
+        <!-- <button mat-button (click)="completeStep(i)">Complete Step</button> -->
+        <button mat-button  (click)="completeStep(i)" matStepperNext>Complete Step</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
+
+<pre>
+  {{steps | json}}
+</pre>

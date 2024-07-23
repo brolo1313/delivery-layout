@@ -49,6 +49,7 @@ import {
   ContainerOrderWasteContractorComponent
 } from "./container/order/container-order-waste-contractor/container-order-waste-contractor.component";
 import {ContainerOrderTableComponent} from "./container/order/container-order-table/container-order-table.component";
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 
 
 @NgModule({
@@ -103,7 +104,10 @@ import {ContainerOrderTableComponent} from "./container/order/container-order-ta
     MatStepperIcon
     // Configure the router
   ],
-  providers: [provideHttpClient(withInterceptorsFromDi())],
+  providers: [provideHttpClient(withInterceptorsFromDi()),   {
+    provide: STEPPER_GLOBAL_OPTIONS,
+    useValue: {displayDefaultIndicatorType: false},
+  },],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
