@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>יצירת פרויקט חדש</h2>
+<mat-dialog-content [formGroup]="projectForm">
+  <p>שם פרויקט</p>
+  <mat-form-field>
+    <mat-label>פרויקט חדש</mat-label>
+    <input matInput formControlName="projectName"  />
+    <mat-error *ngIf="projectForm.get('projectName')?.invalid && projectForm.get('projectName')?.touched">
+      שם פרויקט נדרש
+    </mat-error>
+  </mat-form-field>
+
+  <p>כתובת</p>
+  <app-address-autocomplete (addressChanged)="onAddressChanged($event)"  ></app-address-autocomplete>
+<!--  <mat-form-field>-->
+<!--    <mat-label>כתובת, עיר</mat-label>-->
+
+<!--    -->
+
+<!--    <input matInput formControlName="fullAddress" />-->
+<!--    <mat-error *ngIf="projectForm.get('fullAddress')?.invalid && projectForm.get('fullAddress')?.touched">-->
+<!--      כתובת נדרשת-->
+<!--    </mat-error>-->
+<!--  </mat-form-field>-->
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">ביטול</button>
+  <button mat-button (click)="submitNewProjectForm()" cdkFocusInitial>הקמת פרויקט</button>
+</mat-dialog-actions>

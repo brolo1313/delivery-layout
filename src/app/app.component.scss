@@ -1,0 +1,42 @@
+.sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 200px;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.content {
+  padding: 20px;
+}
+
+div[fxLayout="row wrap"] {
+  justify-content: center;
+
+  button {
+    margin: 10px;
+    flex: 1 1 calc(33% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  div[fxLayout="row wrap"] button {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  div[fxLayout="row wrap"] button {
+    flex: 1 1 100%;
+  }
+}
+
+body[dir="rtl"] {
+  text-align: right;
+}

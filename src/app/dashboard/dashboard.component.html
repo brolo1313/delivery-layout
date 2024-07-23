@@ -1,0 +1,82 @@
+<mat-sidenav-container class="sidenav-container" [hasBackdrop]="false" dir="rtl">
+  <mat-sidenav #sidenav mode="side" opened>
+
+    <mat-nav-list>
+      <mat-list-item >
+        <button mat-raised-button (click)="openNewProjectDialog()">Basic</button>
+      </mat-list-item>
+      <mat-list-item (click)="closeSidenav()">Menu Item 2</mat-list-item>
+      <mat-list-item (click)="closeSidenav()">Menu Item 3</mat-list-item>
+      <mat-list-item (click)="closeSidenav()">Menu Item 4</mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>WasteX</span>
+    </mat-toolbar>
+
+
+    <app-container-order-waste-contractor style="height: 100%" *ngIf="development==='containerorderwastecontractor'"></app-container-order-waste-contractor>
+
+    <app-container-order-waste-producer style="height: 100%" *ngIf="development==='containerorderwasteproducer'"></app-container-order-waste-producer>
+
+    <app-project-overview style="height: 100%" *ngIf="development==='projectoverview'"></app-project-overview>
+
+    <app-committee-dashboard style="height: 100%" *ngIf="development==='committeedash'"></app-committee-dashboard>
+
+    <div fxLayout="row" *ngIf="development==='dash'" class="dashboard-container">
+      <div fxFlex="70" class="column column-left">
+        <div class="rightContainer" fxLayout="column" fxLayoutGap="20px">
+          <div fxLayout="row"  fxLayoutAlign="center center" fxFlex="15" class="statsRow">
+
+          <app-stats-row style="width: 100%"></app-stats-row>
+
+          </div>
+          <div fxLayout="row"  fxFlex="85" class="row row-1">
+
+            <div fxLayout="column" style="width: 100%; ">
+              <mat-label>sdsad</mat-label>
+              <app-smart-table [columns]="columns" [data]="data" style="width: 100%; "></app-smart-table>
+              <mat-label>sdsad</mat-label>
+              <app-smart-table  [columns]="columns" [data]="data" style="width: 100%; "></app-smart-table>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div fxFlex="30" class="column column-right">
+        <div fxLayout="column" fxLayoutGap="10px">
+          <div fxFlex="30" class="row row-0"></div>
+          <div fxFlex="70" class="row row-1"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+<!--    <mat-grid-list style="margin-top: 10px" cols="100" rowHeight="50%" gutterSize="10px">-->
+<!--      <mat-grid-tile [colspan]="70" style="background-color: #413a3a">-->
+<!--        <div class='internalMatGrid' style="min-height: 80%">-->
+<!--          <mat-grid-list style="margin-top: 10px" cols="4" rowHeight="30%" gutterSize="10px">-->
+<!--            <mat-grid-tile [colspan]="1" style="background-color: #81d729">2</mat-grid-tile>-->
+<!--          </mat-grid-list>-->
+<!--        </div>-->
+
+
+<!--      </mat-grid-tile>-->
+<!--      <mat-grid-tile [colspan]="30" style="background-color: #413">2</mat-grid-tile>-->
+<!--      <mat-grid-tile [colspan]="70" style="background-color: #4121d3" > 3</mat-grid-tile>-->
+<!--      <mat-grid-tile [colspan]="30" style="background-color: #4121a3">4</mat-grid-tile>-->
+<!--    </mat-grid-list>-->
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

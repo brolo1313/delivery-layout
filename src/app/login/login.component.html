@@ -1,0 +1,32 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="login-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>התחברות</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>שם משתמש</mat-label>
+          <input matInput formControlName="username" placeholder="הכנס שם משתמש" required>
+          <mat-error *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">
+            יש להכניס שם משתמש תקין
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>סיסמא</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="הכנס סיסמא" required>
+          <mat-error *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+            יש להכניס סיסמא תקינה
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">התחבר</button>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="accent">שכחת סיסמא?</button>
+      <button mat-button color="accent">הרשמה</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

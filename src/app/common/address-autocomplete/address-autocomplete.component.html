@@ -1,0 +1,7 @@
+<mat-form-field appearance="fill">
+  <mat-label>Search for a place</mat-label>
+  <input matInput #searchInput type="text" (input)="onInputChange()" placeholder="Enter a location" />
+  <mat-error *ngIf="isAddressComplete">
+    יש להכניס סיסמא תקינה
+  </mat-error>
+</mat-form-field>
