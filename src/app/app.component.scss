@@ -128,7 +128,6 @@ $text-secondary: #5C6B82;
 
   a {
     display: flex;
-    align-items: center;
   }
 }
 
@@ -158,11 +157,13 @@ $text-secondary: #5C6B82;
 }
 
 .sidebar .nav-links li.active a .link_name,
-.sidebar .nav-links li.active mat-icon.link_icon,
 .sidebar .nav-links li.active i,
-.sidebar .nav-links li.active mat-icon.link_icon,
 .sidebar .nav-links li .sub-menu li.active a {
   color: #44454A !important;
+}
+
+.sidebar .nav-links li.active img.link_icon {
+  filter: invert(88%) sepia(21%) saturate(935%) hue-rotate(123deg) brightness(85%) contrast(97%);
 }
 
 .sidebar.sidebar-close .nav-links li a .link_name {

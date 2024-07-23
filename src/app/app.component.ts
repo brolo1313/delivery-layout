@@ -18,47 +18,41 @@ export class AppComponent {
       type: 'item',
       iconSrc: null,
       path: '/dashboard',
-      sub_menu: []
     },
     {
-      id: 'contacts',
+      id: 'control-panel',
       link_name: 'לוח בקרה',
       type: 'item',
       path: null,
       iconSrc: 'assets/icons/sidebar-link-icon-5.svg',
-      sub_menu: []
     },
     {
-      id: 'dashboard',
+      id: 'new-project',
       link_name: 'הקם פרויקט חדש',
       type: 'item',
       iconSrc: 'assets/icons/sidebar-link-icon-4.svg',
-      path: 'null',
-      sub_menu: []
+      path: null,
     },
     {
-      id: 'contacts',
+      id: 'container-management',
       link_name: 'ניהול מכולות',
       type: 'item',
       path: null,
       iconSrc: 'assets/icons/sidebar-link-icon-3.svg',
-      sub_menu: []
     },
     {
       id: 'dashboard',
       link_name: 'הזמנת מכולה חדשה',
       type: 'item',
       iconSrc: 'assets/icons/sidebar-link-icon-2.svg',
-      path: 'null',
-      sub_menu: []
+      path: null,
     },
     {
-      id: 'contacts',
+      id: 'management-user',
       link_name: 'הגדרות משתמש',
       type: 'item',
       path: null,
       iconSrc: 'assets/icons/sidebar-link-icon-1.svg',
-      sub_menu: []
     },
   ];
 

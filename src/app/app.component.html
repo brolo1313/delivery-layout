@@ -3,7 +3,7 @@
       <div class="sidebar" [class.sidebar-close]="!openSidebar">
         <div *ngIf="!openSidebar" class="mobile_logo" (click)="openSidebar = !openSidebar"><strong>X</strong></div>
         <div class="logo-details">
-          <div *ngIf="openSidebar" class="logo">
+          <div *ngIf="openSidebar" class="logo" (click)="openSidebar = !openSidebar">
             <img src="assets/icons/logo_sidebar.png" alt="">
           </div>
 
@@ -15,17 +15,20 @@
          
         </div>
         <ul class="nav-links" id="nav-links"  [ngStyle]="openSidebar ? { 'display': 'block', 'padding': '0 30px'} : {'display': 'flex', 'justify-content': 'center', 'flex-direction': 'column',  'padding': '0'}">
-          <li *ngFor="let item of navItems" [ngClass]="{'showMenu': (itemEl.classList.contains('active')) && item.sub_menu.length > 0}" #itemEl routerLinkActive="active">
-            <div *ngIf="item.sub_menu.length == 0" class="dropdown-title" [ngStyle]="{'padding': openSidebar ? '5px' : '0'}">
-              <a [routerLink]="[item.path]">
+          <li *ngFor="let item of navItems; let isFirst = first" [ngClass]="{'showMenu': (itemEl.classList.contains('active'))}" #itemEl routerLinkActive="active">
+            <div class="dropdown-title" >
+              <a [routerLink]="[item.path]" [ngStyle]="{'padding': isFirst ? '0px': '5px'}">
                 <img src="{{item.iconSrc}}" [ngStyle]="{'margin-left': openSidebar ? '5px' : '0'}" class="link_icon">
                 <span *ngIf="openSidebar" class="link_name">{{
                   item.link_name
                 }}</span>
               </a>
             </div>
+            
           </li>
         </ul>
+
+        
 
         <div *ngIf="openSidebar" class="settings">
             <a href="#">התנתק מהמערכת</a>
