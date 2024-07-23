@@ -1,0 +1,191 @@
+.card {
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.11);
+  -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.11);
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.11);
+  -webkit-border-bottom-right-radius: 24px;
+  -webkit-border-bottom-left-radius: 24px;
+  -moz-border-radius-bottomright: 24px;
+  -moz-border-radius-bottomleft: 24px;
+  border-bottom-right-radius: 24px;
+  border-bottom-left-radius: 24px;
+
+  &-header {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 4px;
+
+    -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.11);
+    -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.11);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.11);
+
+
+
+    &-info {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    &-description {
+      display: flex;
+      align-items: center;
+      color: gray;
+      padding: 10px 0;
+
+
+      &_status {
+        padding: 0 10px;
+        margin-right: 5px;
+        color: black;
+        background-color: #FFE080;
+        border-radius: 4px;
+      }
+
+    }
+  }
+}
+
+.card-body {
+  display: flex;
+  padding: 20px;
+
+  &-details {
+    width: 50%;
+  }
+
+  &-contacts {
+    width: 50%;
+  }
+
+  &-title {
+    font-weight: 700;
+  }
+
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    background-color: #F2F6F9;
+    padding: 10px 10px 10px 20px;
+    margin-right: 10px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+
+    &_list {
+      display: flex;
+      flex-direction: column;
+
+      &-item {
+
+
+        &-title {
+          font-weight: 700;
+          margin-left: 10px;
+        }
+      }
+
+      &-item-alert {
+        width: fit-content;
+        background-color: #F96365;
+        padding-left: 10px;
+      }
+    }
+
+    & button {
+      padding: 5px 10px;
+      border-radius: 4px;
+      display: flex;
+      align-items: stretch;
+      background-color: transparent;
+      border: 1px solid #707384;
+      cursor: pointer;
+
+      & svg {
+        width: 20px;
+        margin-left: 10px;
+      }
+    }
+
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+
+    & button {
+      border: 1px solid #F96365;
+      border-radius: 4px;
+      background-color: transparent;
+      padding: 5px 15px;
+      cursor: pointer;
+    }
+
+    & button:hover {
+      background-color: #F96365;
+      color: white;
+    }
+
+    & span {
+      padding: 5px 15px;
+      border-radius: 4px;
+      background-color: #e4e3e3;
+    }
+  }
+
+  &-delivery {
+    display: flex;
+    flex-direction: column;
+
+    & p {
+      background-color: #FBEDC0;
+      padding: 10px 10px 10px 20px;
+      margin-right: 10px;
+      border-radius: 8px;
+
+    }
+
+  }
+
+  &-contact {
+    margin-right: 10px;
+
+    & p {
+      color: gray;
+    }
+
+    &_btn {
+      padding: 0;
+      display: flex;
+      background-color: #EFFCF3;
+      -webkit-box-shadow: 0px 0px 20px 3px rgba(219, 216, 219, 0.36);
+      -moz-box-shadow: 0px 0px 20px 3px rgba(219, 216, 219, 0.36);
+      box-shadow: 0px 0px 20px 3px rgba(219, 216, 219, 0.36);
+
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+
+      & svg {
+        width: 20px;
+        height: 30px;
+        padding: 5px;
+        background-color: #4ED384;
+      }
+
+      &-text {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        font-weight: 600;
+        padding: 5px;
+      }
+    }
+  }
+
+
+  .vertical-line {
+    width: 1px;
+    height: auto;
+    margin: 0 20px 0 10px;
+    background-color: #F3F3F3;
+  }
+}
