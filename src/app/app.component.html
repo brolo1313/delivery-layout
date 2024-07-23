@@ -1,28 +1,42 @@
-<!--<mat-sidenav-container class="sidenav-container" dir="rtl">-->
-<!--  <mat-sidenav #sidenav mode="over" opened>-->
-<!--    <mat-nav-list>-->
-<!--      <mat-list-item (click)="closeSidenav()">Menu Item 1</mat-list-item>-->
-<!--      <mat-list-item (click)="closeSidenav()">Menu Item 2</mat-list-item>-->
-<!--      <mat-list-item (click)="closeSidenav()">Menu Item 3</mat-list-item>-->
-<!--      <mat-list-item (click)="closeSidenav()">Menu Item 4</mat-list-item>-->
-<!--    </mat-nav-list>-->
-<!--  </mat-sidenav>-->
-<!--  <mat-sidenav-content>-->
-<!--    <mat-toolbar color="primary">-->
-<!--      <button mat-icon-button (click)="sidenav.toggle()">-->
-<!--        <mat-icon>menu</mat-icon>-->
-<!--      </button>-->
-<!--      <span>My Responsive Project</span>-->
-<!--    </mat-toolbar>-->
+<div class="main-container">
+    <div class="desktop">
+      <div class="sidebar" [class.sidebar-close]="!openSidebar">
+        <div *ngIf="!openSidebar" class="mobile_logo" (click)="openSidebar = !openSidebar"><strong>X</strong></div>
+        <div class="logo-details">
+          <div *ngIf="openSidebar" class="logo"  (click)="openSidebar = !openSidebar">
+            <img src="assets/icons/logo_sidebar.png" alt="">
+          </div>
 
+          <div *ngIf="openSidebar" class="logo-description">
+            <span class="info_logo">ערב טוב,</span>
+            <span class="info_logo">ישראל מ. ישראלי</span>
+            <span class="address_logo">יזם|ח.פ 38874</span>
+          </div>
+         
+        </div>
+        <ul class="nav-links" id="nav-links"  [ngStyle]="openSidebar ? { 'display': 'block', 'padding': '0 30px'} : {'display': 'flex', 'justify-content': 'center', 'flex-direction': 'column',  'padding': '0'}">
+          <li *ngFor="let item of navItems" [ngClass]="{'showMenu': (itemEl.classList.contains('active')) && item.sub_menu.length > 0}" #itemEl routerLinkActive="active">
+            <div *ngIf="item.sub_menu.length == 0" class="dropdown-title" [ngStyle]="{'padding': openSidebar ? '5px' : '0'}">
+              <a [routerLink]="[item.path]">
+                <mat-icon [ngClass]="openSidebar ? 'me-4' : 'me-0' " class="link_icon">{{
+                  item.icon
+                }}</mat-icon>
+                <span *ngIf="openSidebar" class="link_name">{{
+                  item.link_name
+                }}</span>
+              </a>
+            </div>
+          </li>
+        </ul>
 
-
-<!--    <div class="content">-->
-<!--      //router goes here-->
-<!--    </div>-->
-<!--  </mat-sidenav-content>-->
-<!--</mat-sidenav-container>-->
-
-<router-outlet></router-outlet>
-
+        <div *ngIf="openSidebar" class="settings">
+            <a href="#">התנתק מהמערכת</a>
+        </div>
+      </div>
+      <section class="home-section text-white" [class.mobile]="isMobile">
+          <router-outlet></router-outlet>
+      </section>
+    </div>
+  </div>
+  
 <!--<app-login></app-login>-->
