@@ -58,4 +58,8 @@
       </div>
     </mat-step>
   </mat-stepper>
+
+  <p><mat-slide-toggle [checked]="true" (change)="toggleDirection($event)">{{ isRtl ? 'RTL enabled' : 'RTL disabled'}}</mat-slide-toggle></p>
+
 </div>
+
