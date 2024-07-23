@@ -2,16 +2,10 @@
   class="example-stepper"
   [orientation]="(stepperOrientation | async)!">
   <mat-step [stepControl]="firstFormGroup" label="Fill out your name">
-    <form [formGroup]="firstFormGroup">
-      <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
+
+    <app-step-info></app-step-info>
   </mat-step>
+
   <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
     <form [formGroup]="secondFormGroup">
       <mat-form-field>
