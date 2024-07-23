@@ -1,6 +1,6 @@
 <div class="stepper-container" [dir]="direction">
-  <mat-stepper class="stepper" [orientation]="(stepperOrientation | async)!">
-    <mat-step [stepControl]="firstFormGroup" label="Fill out your name">
+  <mat-stepper linear  class="stepper" [orientation]="(stepperOrientation | async)!">
+    <mat-step [stepControl]="firstFormGroup" label="Fill out your name" errorMessage="Name is required.">
       <form [formGroup]="firstFormGroup">
         <mat-form-field>
           <mat-label>Name</mat-label>
@@ -16,7 +16,7 @@
         </div>
       </form>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+    <mat-step [stepControl]="secondFormGroup" label="Fill out your address" errorMessage="Address is required.">
       <form [formGroup]="secondFormGroup">
         <mat-form-field>
           <mat-label>Address</mat-label>
@@ -33,7 +33,7 @@
         </div>
       </form>
     </mat-step>
-    <mat-step [stepControl]="thirdFormGroup" label="Fill out your phone number">
+    <mat-step [stepControl]="thirdFormGroup" label="Fill out your phone number" errorMessage="Phone is required.">
       <form [formGroup]="thirdFormGroup">
         <mat-form-field>
           <mat-label>Phone number</mat-label>

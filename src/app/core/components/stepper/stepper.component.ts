@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AsyncPipe } from '@angular/common';
 import { Directionality, Direction } from '@angular/cdk/bidi';
 import { MatSlideToggleChange, MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 
 @Component({
   selector: 'app-core',
@@ -24,7 +25,13 @@ import { MatSlideToggleChange, MatSlideToggleModule } from '@angular/material/sl
     MatSlideToggleModule,
   ],
   templateUrl: './stepper.component.html',
-  styleUrl: './stepper.component.scss'
+  styleUrl: './stepper.component.scss',
+  providers: [
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: {showError: true},
+    },
+  ],
 })
 export class StepperComponent {
   firstFormGroup = this._formBuilder.group({
@@ -45,7 +52,7 @@ export class StepperComponent {
 
   constructor(private _formBuilder: FormBuilder, private dir: Directionality, breakpointObserver: BreakpointObserver,) {
     this.isRtl = dir.value === 'rtl';
-    
+
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 800px)')
       .pipe(map(({ matches }) => (matches ? 'horizontal' : 'vertical')));
