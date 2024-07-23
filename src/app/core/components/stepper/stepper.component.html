@@ -1,65 +1,85 @@
 <div class="stepper-container" [dir]="direction">
-  <mat-stepper linear  class="stepper" [orientation]="(stepperOrientation | async)!">
-    <mat-step [stepControl]="firstFormGroup" label="Fill out your name" errorMessage="Name is required.">
-      <form [formGroup]="firstFormGroup">
-        <mat-form-field>
-          <mat-label>Name</mat-label>
-          <input
-            matInput
-            placeholder="Last name, First name"
-            formControlName="firstCtrl"
-            required
-          />
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperNext>Next</button>
+  <mat-stepper
+    linear
+    class="stepper"
+    [orientation]="(stepperOrientation | async)!"
+  >
+    <form [formGroup]="form">
+      <mat-step
+        [stepControl]="form.get('personalDetails')!"
+        label="Fill out your name"
+      >
+        <div formGroupName="personalDetails">
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input
+              matInput
+              placeholder="Last name, First name"
+              formControlName="firstCtrl"
+              required
+            />
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
         </div>
-      </form>
-    </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Fill out your address" errorMessage="Address is required.">
-      <form [formGroup]="secondFormGroup">
-        <mat-form-field>
-          <mat-label>Address</mat-label>
-          <input
-            matInput
-            formControlName="secondCtrl"
-            placeholder="Ex. 1 Main St, New York, NY"
-            required
-          />
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+      </mat-step>
+      <mat-step
+        [stepControl]="form.get('address')!"
+        label="Fill out your address"
+      >
+        <div formGroupName="address">
+          <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input
+              matInput
+              formControlName="secondCtrl"
+              placeholder="Ex. 1 Main St, New York, NY"
+              required
+            />
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
         </div>
-      </form>
-    </mat-step>
-    <mat-step [stepControl]="thirdFormGroup" label="Fill out your phone number" errorMessage="Phone is required.">
-      <form [formGroup]="thirdFormGroup">
-        <mat-form-field>
-          <mat-label>Phone number</mat-label>
-          <input
-            matInput
-            formControlName="thirdCtrl"
-            placeholder="Ex. 12345678"
-            required
-          />
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+      </mat-step>
+      <mat-step
+        [stepControl]="form.get('contacts')!"
+        label="Fill out your phone number"
+      >
+        <div formGroupName="contacts">
+          <mat-form-field>
+            <mat-label>Phone number</mat-label>
+            <input
+              matInput
+              formControlName="thirdCtrl"
+              placeholder="Ex. 12345678"
+              required
+            />
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
         </div>
-      </form>
-    </mat-step>
+      </mat-step>
+    </form>
+
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
+      <p>Name: {{ form.get("personalDetails.firstCtrl")?.value }}</p>
+      <p>Address: {{ form.get("address.secondCtrl")?.value }}</p>
+      <p>Phone number: {{ form.get("contacts.thirdCtrl")?.value }}</p>
       <div>
         <button mat-button matStepperPrevious>Back</button>
       </div>
     </mat-step>
   </mat-stepper>
 
-  <p><mat-slide-toggle [checked]="true" (change)="toggleDirection($event)">{{ isRtl ? 'RTL enabled' : 'RTL disabled'}}</mat-slide-toggle></p>
-
+  <p>
+    <mat-slide-toggle [checked]="isRtl" (change)="toggleDirection($event)">
+      {{ isRtl ? "RTL enabled" : "RTL disabled" }}
+    </mat-slide-toggle>
+  </p>
 </div>
-
