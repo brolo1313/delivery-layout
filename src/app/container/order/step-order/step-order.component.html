@@ -1,0 +1,136 @@
+<div class="order-wrapper">
+
+  <mat-card class="full-width card">
+    <form
+      [formGroup]="form"
+      (ngSubmit)="submit(form.value)"
+    >
+
+      <div class="d-flex form-wrapper">
+        <div class="ml-1">
+          <mat-form-field
+            appearance="fill"
+            class="w-100"
+          >
+            <mat-label>שם הפרויקט</mat-label>
+            <input
+              matInput
+              formControlName="projectName"
+              placeholder="בנייני ירוק זית"
+            />
+
+          </mat-form-field>
+
+
+          <mat-form-field
+            appearance="fill"
+            class="w-100"
+          >
+            <mat-label>תאריך רצוי לקבלת המכונה</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              formControlName="desiredDate"
+              placeholder="בחר תאריך"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field
+            appearance="fill"
+            class="w-100"
+          >
+            <mat-label>קבלן פינוי</mat-label>
+            <mat-select formControlName="removalContractor">
+              @for (option of contractorOptions; track option) {
+              <mat-option [value]="option.value">{{option.viewValue}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field
+            appearance="fill"
+            class="w-100"
+          >
+            <mat-label>נפח מכולה רצוי</mat-label>
+            <mat-select formControlName="desiredContainerVolume">
+              <mat-option value="option1">אופציה 1</mat-option>
+              <mat-option value="option2">אופציה 2</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field
+            appearance="fill"
+            class="w-100"
+          >
+            <mat-label>כתובת למיקום המכונה</mat-label>
+            <input
+              matInput
+              formControlName="machineLocation"
+              placeholder="רחבעם זאבי 14, קרית אונו"
+            />
+          </mat-form-field>
+          <mat-form-field
+            appearance="fill"
+            class="w-100"
+          >
+            <mat-label>הערות כלליות</mat-label>
+            <textarea
+              matInput
+              formControlName="generalNotes"
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+      </div>
+      <button
+        class="submit-btn"
+        mat-raised-button
+        color="primary"
+        type="submit"
+      >שליחת הזמנה לאישור קבלן הפינוי</button>
+    </form>
+
+
+  </mat-card>
+
+  <mat-card class="config-card">
+    <div class="config-list">
+      <p class="config-list-title">הנחיות</p>
+      <div class="config-list-wrapper">
+        <div class="config-list-item">
+          <p class="config-list-item_head">שם הפרויקט</p>
+          <p class="config-list-item_description">כאן עליך לבחור את שם הפרויקט שאליו הנך מעוניין/ת
+            להזמין את המכולה</p>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="config-list-item">
+          <p class="config-list-item_head">כתובת למיקום המכולה</p>
+          <p class="config-list-item_description">זוהי כתובת הפרויקט. במידה וברצונך למקם את המכולה במקום אחר, אנא שנה את
+            הכתובת בהתאם</p>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="config-list-item">
+          <p class="config-list-item_head">תאריך רצוי לקבלת המכולה</p>
+          <p class="config-list-item_description">בשדה זה עליך להזין את התאריך וטווח השעות בהן תרצה לקבל את המכולה</p>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="config-list-item">
+          <p class="config-list-item_head">קבלן פינוי</p>
+          <p class="config-list-item_description">יש לבחור את קבלן הפינוי ממנו תרצו להזמין מכולה</p>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="config-list-item">
+          <p class="config-list-item_head">נפח מכולה רצוי</p>
+          <p class="config-list-item_description">יש לבחור את נפח המכולה הרצוי מתוך רשימת המכולות של הקבלן</p>
+        </div>
+
+      </div>
+    </div>
+  </mat-card>
+</div>

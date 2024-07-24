@@ -1,0 +1,56 @@
+.order-wrapper {
+    display: flex;
+    margin: 0 5px 5px 5px;
+}
+
+
+.card {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding: 68px;
+    border-radius: 0 0 30px 0;
+    box-shadow: 3px 2px 6px #00000033;
+    margin: 0 5px 5px 5px;
+    width: calc(100% - 15px);
+}
+
+.config-card {
+    max-width: 410px;
+}
+.config-list {
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+        font-size: 20px;
+        font-weight: 700;
+        padding: 20px;
+        background-color: #E8F2FC;
+    }
+
+    &-wrapper {
+        padding: 0 30px;
+    }
+
+    &-item {
+        &_head {
+            font-weight: 700;
+        }
+
+        &_description {
+            word-wrap: break-word;
+            font-weight: 500;
+        }
+    }
+}
+
+.form-wrapper {
+    justify-content: space-between;
+}
+
+.submit-btn {
+    display: flex;
+    margin: 0 auto 0 0;
+    margin-top: 20px;
+}

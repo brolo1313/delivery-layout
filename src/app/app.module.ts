@@ -14,7 +14,9 @@ import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle } 
 import { MatError, MatFormField, MatLabel } from "@angular/material/form-field";
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
+
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { RouterModule } from "@angular/router";
 
 import { routes } from './app.routes';
@@ -37,7 +39,7 @@ import {
 } from "./project/project-creation-wizard/new-project-modal/new-project-modal.component";
 import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle } from "@angular/material/dialog";
 import { ProjectCreationWizardComponent } from "./project/project-creation-wizard/project-creation-wizard.component"; // Import the routes
-import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapsModule } from '@angular/google-maps';
 import { CommitteeDashboardComponent } from "./dashboard/committee-dashboard/committee-dashboard.component";
 import { AddressAutocompleteComponent } from "./common/address-autocomplete/address-autocomplete.component";
 import { MatMenu, MatMenuItem, MatMenuTrigger } from "@angular/material/menu";
@@ -54,13 +56,16 @@ import { StepInfoComponent } from './container/order/step-info/step-info.compone
 import { HeaderComponent } from './dashboard/header/header.component';
 import { CardHeaderComponent } from './container/order/card-header/card-header.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { StepOrderComponent } from './container/order/step-order/step-order.component';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
   declarations: [AppComponent, DashboardComponent,
     ProjectCreationWizardComponent, CommitteeDashboardComponent, ContainerOrderWasteContractorComponent,
     NewProjectModalComponent, ContainerOrderWasteProducerComponent, ProjectOverviewComponent,
-    ContainerOrderTableComponent, LoginComponent, StatsRowComponent, StepInfoComponent, HeaderComponent, CardHeaderComponent],
+    ContainerOrderTableComponent, LoginComponent, StatsRowComponent, StepInfoComponent, HeaderComponent, CardHeaderComponent, StepOrderComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -83,6 +88,8 @@ import { MatRadioModule } from '@angular/material/radio';
     MatFormField,
     MatCardActions,
     MatCardHeader,
+    MatDatepickerModule,
+    MatSelectModule,
     RouterModule.forRoot(routes),
     MatGridList,
     MatGridTile,
@@ -108,10 +115,13 @@ import { MatRadioModule } from '@angular/material/radio';
     MatStepperIcon,
     // Configure the router
   ],
-  providers: [provideHttpClient(withInterceptorsFromDi()), {
-    provide: STEPPER_GLOBAL_OPTIONS,
-    useValue: { displayDefaultIndicatorType: false },
-  },],
+  providers: [
+    provideHttpClient(withInterceptorsFromDi()), {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: { displayDefaultIndicatorType: false },
+    },
+    provideNativeDateAdapter()
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

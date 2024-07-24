@@ -5,6 +5,7 @@
       #stepper
       [(selectedIndex)]="selectedIndex"
       class="{{ 'last-edited-step-' + stepper.selectedIndex }}"
+      [disableRipple]="true"
     >
       <mat-step
         *ngFor="let step of steps; let i = index"
@@ -34,11 +35,19 @@
           </div>
         </ng-template>
         <div>
-          <app-step-info (submitStep)="submitStep($event, i)"></app-step-info>
+          <app-step-info
+            *ngIf="step.state === 'list'"
+            (submitStep)="submitStep($event, i)"
+          ></app-step-info>
+          <app-step-order
+            *ngIf="step.state === 'car'"
+            (submitStep)="submitStep($event, i)"
+          ></app-step-order>
+          <div *ngIf="step.state !== 'list' && step.state !== 'car'">
+            Step {{ i }}
+          </div>
         </div>
       </mat-step>
     </mat-horizontal-stepper>
-
   </div>
-
 </div>

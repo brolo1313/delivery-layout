@@ -159,6 +159,10 @@ $active-hover: #D9E4EA;
   color: $text-main;
 }
 
+.link_icon {
+  width: 20px;
+}
+
 .sidebar .nav-links li.active a .link_name,
 .sidebar .nav-links li.active i,
 .sidebar .nav-links li .sub-menu li.active a {
