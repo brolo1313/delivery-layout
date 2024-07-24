@@ -10,9 +10,14 @@ import { MatTabsModule } from '@angular/material/tabs';
 export class StepInfoComponent {
   @Output() submitStep: EventEmitter<any> = new EventEmitter();
 
+  public selectedOption: string;
+
+  constructor() {
+    this.selectedOption = '1';
+  }
 
   public submit(stepInfo: any): void {
     this.submitStep.emit(stepInfo);
   }
- 
+
 }

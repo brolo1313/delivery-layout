@@ -67,9 +67,20 @@
 
           <div class="card-body-contacts">
             <p class="card-body-title">פרטי הובלה</p>
-            <div class="card-body-delivery">
-              <p>ממתין לאישור הקבלן</p>
 
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="selectedOption">
+              <mat-radio-button value="1">Option 1</mat-radio-button>
+              <mat-radio-button value="2">Option 2</mat-radio-button>
+            </mat-radio-group>      
+            
+            
+            <div *ngIf="selectedOption === '1'" class="card-body-delivery">
+              <p>ממתין לאישור הקבלן</p>
+            </div>
+
+            <div *ngIf="selectedOption === '2'" class="card-body-delivery_green">
+              <p>ממתין לאישור הקבלן</p>
+              <p>ממתין לאישור הקבלן</p>
             </div>
 
             <p class="card-body-title">אנשי קשר</p>
