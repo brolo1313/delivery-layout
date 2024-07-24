@@ -50,14 +50,15 @@ import {
 } from "./container/order/container-order-waste-contractor/container-order-waste-contractor.component";
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { ContainerOrderTableComponent } from "./container/order/container-order-table/container-order-table.component";
-import { StepInfoComponent } from './dashboard/step-info/step-info.component';
+import { StepInfoComponent } from './container/order/step-info/step-info.component';
+import { HeaderComponent } from './dashboard/header/header.component';
 
 
 @NgModule({
   declarations: [AppComponent, DashboardComponent,
     ProjectCreationWizardComponent, CommitteeDashboardComponent, ContainerOrderWasteContractorComponent,
     NewProjectModalComponent, ContainerOrderWasteProducerComponent, ProjectOverviewComponent,
-    ContainerOrderTableComponent, LoginComponent, StatsRowComponent, StepInfoComponent],
+    ContainerOrderTableComponent, LoginComponent, StatsRowComponent, StepInfoComponent, HeaderComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
