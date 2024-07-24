@@ -1,5 +1,6 @@
 body {
-  background-color: #E8EDEE; /* Light gray background */
+  background-color: #E8EDEE;
+  /* Light gray background */
   margin: 0;
   height: 100vh;
   display: flex;
@@ -22,7 +23,8 @@ body {
   padding: 10px;
   box-sizing: border-box;
   display: flex;
-  gap: 30px; /* Gap between columns */
+  gap: 30px;
+  /* Gap between columns */
 }
 
 .column {
@@ -31,19 +33,22 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Gap between rows */
+  gap: 10px;
+  /* Gap between rows */
 }
 
-.statsRow{
-  border: 1px solid #ccc; /* Border for rows */
+.statsRow {
+  border: 1px solid #ccc;
+  /* Border for rows */
   //background-color: white;
-  gap:70px
+  gap: 70px
 }
 
 .row {
   //background-color: #e0e0e0; /* Light gray background for rows */
-  border: 1px solid #ccc; /* Border for rows */
-  gap:20px
+  border: 1px solid #ccc;
+  /* Border for rows */
+  gap: 20px
 }
 
 .example-card {
@@ -61,6 +66,75 @@ body {
   height: 100%
 }
 
+.toolbar {
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+  // margin-top: 100px;
+  // margin-bottom: 50px;
+}
+
+
+.order-header-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+
+  & button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid #000;
+    cursor: pointer;
+    padding: 0 10px;
+    border-radius: 4px;
+
+    & span {
+      margin-right: 5px;
+    }
+  }
+
+  & button:hover {
+    background-color: #e0e0e0;
+  }
+
+}
+
+.order-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #EFEFEF;
+
+  & div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-header {
+    color: gray;
+  }
+
+  &-status {
+    background-color: #F1DD84;
+  }
+}
+
+.vertical-line {
+  width: 2px;
+  height: 30px;
+  background-color: #fff;
+}
 
 
 //
