@@ -53,6 +53,7 @@ import { ContainerOrderTableComponent } from "./container/order/container-order-
 import { StepInfoComponent } from './container/order/step-info/step-info.component';
 import { HeaderComponent } from './dashboard/header/header.component';
 import { CardHeaderComponent } from './container/order/card-header/card-header.component';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 @NgModule({
@@ -75,7 +76,7 @@ import { CardHeaderComponent } from './container/order/card-header/card-header.c
     MatLabel,
     FlexLayoutModule,
     ReactiveFormsModule,
-
+    MatRadioModule,
     MatCardContent,
     MatCard,
     MatCardTitle,
