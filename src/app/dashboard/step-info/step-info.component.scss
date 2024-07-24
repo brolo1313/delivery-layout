@@ -111,17 +111,19 @@
     justify-content: space-between;
     padding: 10px 10px 0 10px;
 
-    & button {
-      border: 1px solid #F96365;
-      border-radius: 4px;
-      background-color: transparent;
-      padding: 5px 15px;
-      cursor: pointer;
-    }
+    button {
+      &.cancel {
+        border: 1px solid #F96365;
+        border-radius: 4px;
+        background-color: transparent;
+        padding: 5px 15px;
+        cursor: pointer;
 
-    & button:hover {
-      background-color: #F96365;
-      color: white;
+        &:hover {
+          background-color: #F96365;
+          color: white;
+        } 
+      }
     }
 
     & span {
