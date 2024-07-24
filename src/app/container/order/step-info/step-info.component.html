@@ -65,7 +65,7 @@
 
           <div class="vertical-line"></div>
 
-          <div class="card-body-contacts">
+          <!-- <div class="card-body-contacts">
             <p class="card-body-title">פרטי הובלה</p>
 
             <mat-radio-group aria-label="Select an option" [(ngModel)]="selectedOption">
@@ -100,7 +100,41 @@
               </div>
             </div>
 
-          </div>
+          </div> -->
+          
+          <mat-card>
+            <div class="config-list">
+              <p class="config-list-title">הנחיות</p>
+              <div class="config-list-wrapper">
+                <div  class="config-list-item">
+                  <p class="config-list-item_head">שם הפרויקט</p>
+                  <p class="config-list-item_description">כאן עליך לבחור את שם הפרויקט שאליו הנך מעוניין/ת
+                    להזמין את המכולה</p>
+                </div>
+                <mat-divider></mat-divider>
+                <div  class="config-list-item">
+                  <p class="config-list-item_head">כתובת למיקום המכולה</p>
+                  <p class="config-list-item_description">זוהי כתובת הפרויקט. במידה וברצונך למקם את המכולה במקום אחר, אנא שנה את הכתובת בהתאם</p>
+                </div>
+                <mat-divider></mat-divider>
+                <div  class="config-list-item">
+                  <p class="config-list-item_head">תאריך רצוי לקבלת המכולה</p>
+                  <p class="config-list-item_description">בשדה זה עליך להזין את התאריך וטווח השעות בהן תרצה לקבל את המכולה</p>
+                </div>
+                <mat-divider></mat-divider>
+                <div  class="config-list-item">
+                  <p class="config-list-item_head">קבלן פינוי</p>
+                  <p class="config-list-item_description">יש לבחור את קבלן הפינוי ממנו תרצו להזמין מכולה</p>
+                </div>
+                <mat-divider></mat-divider>
+                <div  class="config-list-item">
+                  <p class="config-list-item_head">נפח מכולה רצוי</p>
+                  <p class="config-list-item_description">יש לבחור את נפח המכולה הרצוי מתוך רשימת המכולות של הקבלן</p>
+                </div>
+
+              </div>
+            </div>
+          </mat-card>
         </div>
     </mat-tab>
     <mat-tab label="עדכונים">Content 2</mat-tab>
