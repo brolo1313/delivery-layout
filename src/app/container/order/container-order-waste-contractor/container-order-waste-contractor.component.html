@@ -1,35 +1,46 @@
-<mat-stepper
-  class="example-stepper"
-  [orientation]="(stepperOrientation | async)!">
-  <mat-step [stepControl]="firstFormGroup" label="Fill out your name">
+<div class="stepper">
+  <div class="stepper-wrapper">
+    <mat-horizontal-stepper
+      [linear]="false"
+      #stepper
+      [(selectedIndex)]="selectedIndex"
+      class="{{ 'last-edited-step-' + stepper.selectedIndex }}"
+    >
+      <mat-step
+        *ngFor="let step of steps; let i = index"
+        [state]="step.state"
+        [completed]="isStepCompleted(i)"
+      >
+        <ng-template matStepLabel>
+          <div class="step-content">
+            <img
+              [src]="step.icon"
+              alt="step icon"
+              class="step-icon"
+            />
+            <div
+              class="step-circle"
+              [ngClass]="{
+              'active': i === selectedIndex,
+              'completed': step.completed
+  
+            }"
+            >
+              <mat-icon *ngIf="step.completed">check</mat-icon>
+            </div>
 
-    <app-step-info></app-step-info>
-  </mat-step>
+            <div class="step-label">{{ step.label }}</div>
+            <div class="step-sub-label">{{ step.subLabel }}</div>
+          </div>
+        </ng-template>
+        <div>
+          <app-step-info
+          (submitStep)="submitStep($event, i)"
+        ></app-step-info>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
 
-  <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
-    <form [formGroup]="secondFormGroup">
-      <mat-form-field>
-        <mat-label>Address</mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-               required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="thirdFormGroup" label="Fill out your phone number">
-    <form [formGroup]="thirdFormGroup">
-      <mat-form-field>
-        <mat-label>Phone number</mat-label>
-        <input matInput formControlName="thirdCtrl" placeholder="Ex. 12345678" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
+  </div>
 
-</mat-stepper>
+</div>
