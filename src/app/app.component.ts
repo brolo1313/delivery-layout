@@ -1,8 +1,7 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, ViewChild } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -20,10 +19,10 @@ export class AppComponent {
       path: '/dashboard',
     },
     {
-      id: 'control-panel',
+      id: 'order-control-panel',
       link_name: 'לוח בקרה',
       type: 'item',
-      path: null,
+      path: '/order-control-panel',
       iconSrc: 'assets/icons/sidebar-link-icon-5.svg',
     },
     {
@@ -60,14 +59,11 @@ export class AppComponent {
 
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
-  isCollapsed = true;
   isMobile = true;
   public titleHeader: string = '';
 
-
-  constructor(private observer: BreakpointObserver, private router: Router, private route: ActivatedRoute) {
-   
-  }
+  observer = inject(BreakpointObserver);
+  router = inject(Router);
 
   ngOnInit() {
     this.observer.observe(['(max-width: 768px)']).subscribe((screenSize) => {
@@ -79,10 +75,4 @@ export class AppComponent {
       }
     });
   }
-
-
-  public showSubmenu(itemEl: HTMLElement) {
-    itemEl.classList.toggle("showMenu");
-  }
-
 }
