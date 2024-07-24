@@ -75,66 +75,6 @@ body {
 }
 
 
-.order-header-name {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.order-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-
-  & button {
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    border: 1px solid #000;
-    cursor: pointer;
-    padding: 0 10px;
-    border-radius: 4px;
-
-    & span {
-      margin-right: 5px;
-    }
-  }
-
-  & button:hover {
-    background-color: #e0e0e0;
-  }
-
-}
-
-.order-details {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin: 0 20px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  background-color: #EFEFEF;
-
-  & div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &-header {
-    color: gray;
-  }
-
-  &-status {
-    background-color: #F1DD84;
-  }
-}
-
-.vertical-line {
-  width: 2px;
-  height: 30px;
-  background-color: #fff;
-}
 
 
 //

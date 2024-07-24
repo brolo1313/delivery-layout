@@ -52,13 +52,14 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { ContainerOrderTableComponent } from "./container/order/container-order-table/container-order-table.component";
 import { StepInfoComponent } from './container/order/step-info/step-info.component';
 import { HeaderComponent } from './dashboard/header/header.component';
+import { CardHeaderComponent } from './container/order/card-header/card-header.component';
 
 
 @NgModule({
   declarations: [AppComponent, DashboardComponent,
     ProjectCreationWizardComponent, CommitteeDashboardComponent, ContainerOrderWasteContractorComponent,
     NewProjectModalComponent, ContainerOrderWasteProducerComponent, ProjectOverviewComponent,
-    ContainerOrderTableComponent, LoginComponent, StatsRowComponent, StepInfoComponent, HeaderComponent],
+    ContainerOrderTableComponent, LoginComponent, StatsRowComponent, StepInfoComponent, HeaderComponent, CardHeaderComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -106,9 +107,9 @@ import { HeaderComponent } from './dashboard/header/header.component';
     MatStepperIcon,
     // Configure the router
   ],
-  providers: [provideHttpClient(withInterceptorsFromDi()),   {
+  providers: [provideHttpClient(withInterceptorsFromDi()), {
     provide: STEPPER_GLOBAL_OPTIONS,
-    useValue: {displayDefaultIndicatorType: false},
+    useValue: { displayDefaultIndicatorType: false },
   },],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
