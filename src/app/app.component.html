@@ -35,6 +35,9 @@
         </div>
       </div>
       <section class="home-section text-white" [class.mobile]="isMobile">
+          <mat-toolbar class="toolbar">
+            <app-header></app-header>
+          </mat-toolbar>
           <router-outlet></router-outlet>
       </section>
     </div>

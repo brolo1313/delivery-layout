@@ -3,12 +3,15 @@ import {LoginComponent} from "./login/login.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {AuthGuard} from "./common/auth/auth.guard";
 import {RoleGuard} from "./common/auth/role.guard";
+import { ContainerOrderWasteProducerComponent } from './container/order/container-order-waste-producer/container-order-waste-producer.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   // { path: 'login', component: LoginComponent },
   // { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [] },
+  { path: 'order-control-panel', component: ContainerOrderWasteProducerComponent, canActivate: [] },
+
   // {
   //   path: 'dashboard',
   //   canActivate: [AuthGuard, RoleGuard],
