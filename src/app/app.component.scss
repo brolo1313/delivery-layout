@@ -5,10 +5,12 @@ $text-active: #848BA7;
 $text-main: #C4D1F3;
 $text-secondary: #5C6B82;
 $active-hover: #D9E4EA;
+
 .toolbar {
   display: flex;
   justify-content: end;
   padding: 10px;
+  background-color: #EFF2F3;
 }
 
 /* Home Section */
