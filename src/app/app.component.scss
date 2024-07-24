@@ -5,7 +5,11 @@ $text-active: #848BA7;
 $text-main: #C4D1F3;
 $text-secondary: #5C6B82;
 
-
+.toolbar {
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+}
 
 /* Home Section */
 .home-section {
@@ -13,8 +17,6 @@ $text-secondary: #5C6B82;
   width: calc(100% - 260px);
   right: 260px;
   position: relative;
-  background-color: #4d4855;
-  background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
   height: 100vh;
   max-height: 100svh;
   overflow: auto;
