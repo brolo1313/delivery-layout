@@ -5,10 +5,14 @@
     <mat-toolbar class="toolbar">
       <app-header></app-header>
     </mat-toolbar>
-    
-    <app-card-header></app-card-header>
 
-    <app-container-order-waste-contractor style="height: 100%" *ngIf="development==='containerorderwastecontractor'"></app-container-order-waste-contractor>
+    <div class="dashboard-card  mdc-card mat-mdc-card">
+      <app-card-header></app-card-header>
+
+      <app-container-order-waste-contractor style="height: 100%" *ngIf="development==='containerorderwastecontractor'"></app-container-order-waste-contractor>
+    </div>
+    
+
 
     <app-container-order-waste-producer style="height: 100%" *ngIf="development==='containerorderwasteproducer'"></app-container-order-waste-producer>
 

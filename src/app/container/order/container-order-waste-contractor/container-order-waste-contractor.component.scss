@@ -50,7 +50,9 @@
 .stepper {
     border-radius: 3px 0 30px 3px;
     background-color: #F9F9FB;
-    padding: 18px;
+    padding: 18px 18px 64px 18px;
+    margin-bottom: 20px;
+    box-shadow: 1px 2px 3px #00000029;
 }
 
 .stepper-wrapper {
@@ -62,7 +64,7 @@
     }
 
     .mat-horizontal-stepper-header {
-        height: 200px;
+        height: 150px;
         background-color: transparent !important;
         padding: 0;
 
@@ -85,7 +87,11 @@
 
     .mat-horizontal-stepper-header-container {
         max-width: 800px;
-        margin: 0 auto;
+        margin: 0 auto 14px auto;
+    }
+
+    .mat-horizontal-content-container {
+        padding: 0;
     }
 }
 
