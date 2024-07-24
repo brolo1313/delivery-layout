@@ -4,7 +4,7 @@ $border-radius: 5px;
 $text-active: #848BA7;
 $text-main: #C4D1F3;
 $text-secondary: #5C6B82;
-
+$active-hover: #D9E4EA;
 .toolbar {
   display: flex;
   justify-content: end;
@@ -113,7 +113,7 @@ $text-secondary: #5C6B82;
 }
 
 .sidebar .nav-links li.active .dropdown-title {
-  background-color:#D9E4EA;
+  background-color: $active-hover;
   width: auto;
   border-radius: $border-radius;
 }
@@ -162,6 +162,18 @@ $text-secondary: #5C6B82;
 .sidebar .nav-links li.active i,
 .sidebar .nav-links li .sub-menu li.active a {
   color: #44454A !important;
+}
+
+.sidebar .nav-links li:hover {
+  background-color: $active-hover;
+
+  .link_name {
+    color: $text-secondary;
+  }
+
+  .link_icon {
+    filter: invert(88%) sepia(21%) saturate(935%) hue-rotate(123deg) brightness(85%) contrast(97%);
+  }
 }
 
 .sidebar .nav-links li.active img.link_icon {
