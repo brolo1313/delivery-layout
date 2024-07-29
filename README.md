@@ -1,4 +1,4 @@
-# WasteClientNew
+# Delivery-layout
 
 About `app`:
 Delivery-Admin-panel for creating and editing client request, layout has 3 main separated components:
@@ -6,6 +6,9 @@ Delivery-Admin-panel for creating and editing client request, layout has 3 main 
 2)Stepper
 3)Additional Stepper component
 
+#DEMO
+
+https://delivery-layout.vercel.app/dashboard
 
 <p align='center'>
  <a href="https://github.com/sponsors/alexandresanlim">
