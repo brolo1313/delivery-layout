@@ -1,6 +1,27 @@
 # WasteClientNew
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+About `app`:
+Delivery-Admin-panel for creating and editing client request, layout has 3 main separated components:
+1) Sidebar
+2)Stepper
+3)Additional Stepper component
+
+
+<p align='center'>
+ <a href="https://github.com/sponsors/alexandresanlim">
+    <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" />
+  </a>&nbsp;&nbsp;
+  <a href="#">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+</a>&nbsp;&nbsp;
+  <a href="#">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
+</a>&nbsp;&nbsp;
+  <a href="#">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white">
+</a>&nbsp;&nbsp;
+
+</p>
 
 ## Development server
 
