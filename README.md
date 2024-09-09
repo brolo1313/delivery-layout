@@ -11,7 +11,7 @@ Delivery-Admin-panel for creating and editing client request, layout has 3 main 
 https://delivery-layout.vercel.app/dashboard
 
 <p align='center'>
- <a href="https://github.com/sponsors/alexandresanlim">
+ <a href="#">
     <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" />
   </a>&nbsp;&nbsp;
   <a href="#">
